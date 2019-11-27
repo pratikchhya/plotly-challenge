@@ -18,10 +18,47 @@ function buildMetadata(sample) {
         // var row = sample_metadata.append("tr");
         sample_metaData.append("h6").text(`${key.toUpperCase()}:${value}`);
       })
-  })
+    })
+        
+      // buildGauge(data.WFREQ)
+      d3.json(url).then(function(data){
+      var wash_freq = data.WFREQ;
+      console.log(wash_freq);
+      var data = [
+      {
+        domain: { x: [0, 1], y: [0, 1] },
+        value: wash_freq, 
+        
+        title: { text: "Wash Frequency" },
+        type: "indicator",
+        mode: "gauge+number+delta",
+        delta: { reference: 380 },
+        gauge: {
+          axis: { range: [null, 10] },
+          steps: [
+            { range: [0, 1], color: "rgb(239,222,205)" },
+            { range: [1, 2], color: "lightgray" },
+            { range: [2, 3], color: "darkgray" },
+            { range: [3, 4], color: "rgb(210,234,208)" },
+            { range: [3, 4], color: "rgb(211,235,209)" },
+            { range: [3, 4], color: "rgb(212,236,210)" },
+            { range: [3, 4], color: "rgb(213,237,211)" },
+            { range: [3, 4], color: "rgb(214,238,212)" },
+            { range: [3, 4], color: "rgb(215,239,213)" }
+          ],
+          threshold: {
+            line: { color: "red", width: 3 },
+            thickness: 0.5,
+            value: wash_freq}
+          }
+          }
+            ];
+    var layout = { width: 400, height: 300, margin: { t: 1, b: 1 } };
+    Plotly.newPlot('gauge', data, layout);
+          })
+
 };
-  
-    // buildGauge(data.WFREQ);
+    
 
 
 function buildCharts(sample) {
@@ -94,6 +131,7 @@ function optionChanged(newSample) {
   buildCharts(newSample);
   buildMetadata(newSample);
 }
-
+    
 // Initialize the dashboard
 init();
+    
