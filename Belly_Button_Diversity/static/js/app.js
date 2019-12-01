@@ -29,22 +29,21 @@ function buildMetadata(sample) {
         domain: { x: [0, 1], y: [0, 1] },
         value: wash_freq, 
         
-        title: { text: "Wash Frequency" },
+        title: { text:title= '<b>Wash Frequency</b><br><i>Scrubs per week</i>'},
         type: "indicator",
-        mode: "gauge+number+delta",
-        delta: { reference: 380 },
+        mode: "gauge+number",
         gauge: {
-          axis: { range: [null, 10] },
+          axis: { range: [null, 9],dtick:1 },
           steps: [
             { range: [0, 1], color: "rgb(239,222,205)" },
             { range: [1, 2], color: "lightgray" },
             { range: [2, 3], color: "darkgray" },
-            { range: [3, 4], color: "rgb(210,234,208)" },
-            { range: [3, 4], color: "rgb(211,235,209)" },
-            { range: [3, 4], color: "rgb(212,236,210)" },
-            { range: [3, 4], color: "rgb(213,237,211)" },
-            { range: [3, 4], color: "rgb(214,238,212)" },
-            { range: [3, 4], color: "rgb(215,239,213)" }
+            { range: [3, 4], color: "rgb(200,215,195)" },
+            { range: [4, 5], color: "rgb(210,234,208)" },
+            { range: [5, 6], color: "rgb(151,175,112)" },
+            { range: [6, 7], color: "rgb((122,182,115)" },
+            { range: [7, 8], color: "rgb(119,176,123)" },
+            { range: [8, 9], color: "rgb(114,168,118)" }
           ],
           threshold: {
             line: { color: "red", width: 3 },
