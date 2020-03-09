@@ -15,7 +15,7 @@ Built an interactive dashboard to explore the Belly Button Biodiversity DataSet.
 
 ## Step 1 - Plotly.js
 
-Interactive charts for your dashboard were created using Plotly.js.
+Interactive charts for dashboard were created using Plotly.js.
 
 * PIE chart -  used data from samples route (`/samples/<sample>`) to display the top 10 samples.
 
@@ -41,14 +41,12 @@ Interactive charts for your dashboard were created using Plotly.js.
 
  * Gauge Chart - plotted the Weekly Washing Frequency obtained from the `/metadata/<sample>`route.
 
-* Sample metadata from the route `/metadata/<sample>` was displayed.* Display each key/value pair from the metadata JSON object somewhere on the page.
+* Sample metadata from the route `/metadata/<sample>` was displayed. Each key/value pair from the metadata JSON object was displayed on     the page.
 
   
 ## Step 2 - Heroku
 
 Flask app was Deployed to Heroku.
-
-* You can use the provided sqlite file for the database.
 
 
 ## Flask API
