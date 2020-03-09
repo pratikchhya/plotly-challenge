@@ -56,7 +56,7 @@ Flask app was Deployed to Heroku.
 Flask API was used to serve the data needed for plots.
 
 
-* Don't forget to `pip install -r requirements.txt` before starting your server.
+* Don't forget to `pip install -r requirements.txt` before starting the server.
 
 
 
